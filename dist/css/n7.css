@@ -1,0 +1,9 @@
+.input_area {
+	width: 70%;
+	margin-left: auto;
+}
+
+#guide-canvas {
+	font-familiy: NudgeFlix, serif;
+	letter-spacing: 0.05em;
+}

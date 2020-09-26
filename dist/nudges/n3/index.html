@@ -1,0 +1,152 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>NudgeFlix Registration</title>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" />
+		<link rel="stylesheet" type="text/css" href="/css/form.css" />
+		<link rel="stylesheet" type="text/css" href="/css/avatar.css" />
+		<link rel="stylesheet" type="text/css" href="/css/n7.css" />
+		<script src="/script/n3.js"></script>
+	</head>
+	<body>
+		<div id="explanation-popup" class="modal" style="display: none;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 style="margin: 0;">Passwort-Hilfe</h2>
+				</div>
+				<div class="modal-body center" style="background-color: inherit; margin-top: 0;">
+					<h3>Was macht ein Passwort unsicher?</h3>
+					<p>Möchte jemand dein Passwort knacken, so gibt es meist zwei Optionen: Einfach alle möglichen
+						Kombinationen an Buchstaben, Zahlen und Zeichen durchgehen, was bei längeren Passwörtern aber sehr lange
+						dauern kann, oder eine Liste an häufigen Passwörtern und Begriffen einer Sprache so lange mit Zahlen und
+						Sonderzeichen kombinieren, bis sie auf das richtige Passwort kommen.</p>
+					<p>Ein unsicheres Passwort, also eines, das sich schnell knacken lässt, ist also entweder sehr kurz (weniger
+						als 8 Zeichen), oder besteht aus echten Worten in Verbindung mit Zahlen oder Sonderzeichen an häufigen
+						Stellen (am Ende, am Anfang). Ein Beispiel wäre <i>MeinHund2010!</i></p>
+					<hr>
+					<h3>Wie erstelle ich ein sicheres Passwort?</h3>
+					<p>Um einfach zu knackende Passwörter zu verhindern, schlagen wir eine Methode vor, welche durch akademische
+						Literatur als sicher befunden wurde: Wir erstellen das Passwort aus den Anfangsbuchstaben eines Satzes! Denk
+						dir einen Satz aus, welchen du dir gut merken kannst und der möglichst viele Zahlen und Satzzeichen enthält,
+						beispielsweise</p>
+					<p style="color: #555555;"><b>Wenn ich mit meinen 2 Hunden spazieren gehe, spielen sie am liebsten Fangen!</b></p>
+					<p>Von diesem Satz nehmen wir dann jeden Anfangsbuchstaben, jedes Satzzeichen und jede Zahl, und schreiben
+						sie hintereinander auf</p>
+					<p style="color: #555555;"><b>Wimm2Hsg,ssalF!</b></p>
+					<p>Dieses Passwort ist nun schwer zu erraten, aber solange du an deine zwei Hunde denkst, ist es leicht
+						wieder ins Gedächtnis zu rufen. Dieses Passwort ist natürlich ein Beispiel und sollte nicht verwendet
+						werden. Experimentiere gern mit mehr Zahlen und Sonderzeichen, oder denk dir andere Regeln dafür aus, wie du
+						Sätze zu Passwörtern machst; wichtig ist nur, dass es lang genug bleibt.</p>
+					<hr>
+					<h3>Eine Alternative: Der Passwort-Manager</h3>
+					<p>Wer sich keine Passwörter merken möchte, oder sich damit überfordert fühlt, für jeden Dienst ein eigenes
+						Passwort zu erstellen, kann auf einen Passwortmanager zurückgreifen. Ein guter Passwortmanager speichert
+						dabei alle deine Passwörter für Dienste in einer verschlüsselten Datei, auf die nur du Zugriff hast, und
+						kann dir meist sogar sichere Passwörter vorschlagen. Dabei haben selbst die Anbieter des Passwortmanagers
+						meist keinen Zugang zu deinen Passwörtern, und finanzieren sich beispielsweise über Premium-Funktionen für
+						Unternehmen.</p>
+					<p>Eine einfache Websuche ergibt eine Menge Optionen, meist hat aber auch dein Browser bereits einen
+						einfachen Passwortmanager eingebaut. Wir empfehlen Passwortmanager, um Passwörter zu sichern.</p>
+				</div>
+				<div class="modal-footer">
+					<button class="modal-button" id="close-explanation">Ich verstehe.</button>
+				</div>
+			</div>
+		</div>
+		<div id="finished-popup" class="modal" style="display: none;">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h2 style="margin: 0;">Schon fertig!</h2>
+				</div>
+				<div id="finished-modal-body" class="modal-body center">
+					<p class="bubble">Du wirst gleich weitergeleitet...</p>
+				</div>
+				<div class="modal-footer">
+					<p></p>
+				</div>
+			</div>
+		</div>
+		<div style="display: flex;">
+			<div class="guide-container" style="flex: 2; max-width: 150px;">
+				<canvas id="guide-canvas" style="width: 150px; height: 100%;">Sprite Canvas not supported by your browser, please skip.</canvas>
+				<p id="avatar-bubble" class="bubble" style="display: none;"></p>
+			</div>
+			<div class="input_area" style="flex: 2; flex-basis: auto;">
+				<div id="creation-popup" class="modal">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h2 style="margin: 0;">Erstelle deinen Avatar</h2>
+						</div>
+						<div class="modal-body center">
+							<img src="../../res/sprites/hair-0.png" alt="Hair Sprite" class="sprite-template" id="avatar-hair" style="display: none;" />
+							<img src="../../res/sprites/head-0.png" alt="Head Sprite" class="sprite-template" id="avatar-head" style="display: none;" />
+							<img src="../../res/sprites/body-0.png" alt="Body Sprite" class="sprite-template" id="avatar-body" style="display: none;" />
+							<img src="../../res/sprites/bottom-0.png" alt="Bottom Sprite" class="sprite-template" id="avatar-bottom" style="display: none;" />
+							<img src="../../res/sprites/placeholder-model.png" alt="Missing Avatar" class="sprite-template" id="avatar-placeholder" style="display: none;" />
+							<table style="margin: auto; padding: 0;">
+								<tr>
+									<td><table>
+										<tr><td><i id="sprite-hair-prev" class="fa fa-caret-left sprite-prev sprite-hair"></i></td></tr>
+										<tr><td><i id="sprite-head-prev" class="fa fa-caret-left sprite-prev sprite-head"></i></td></tr>
+										<tr><td><i id="sprite-body-prev" class="fa fa-caret-left sprite-prev sprite-body"></i></td></tr>
+										<tr><td><i id="sprite-bottom-prev" class="fa fa-caret-left sprite-prev sprite-bottom"></i></td></tr>
+									</table></td>
+									<td><canvas id="sprite-canvas" width="80" height="150">Sprite Canvas not supported by your browser, please skip.</canvas></td>
+									<td><table>
+										<tr><td><i id="sprite-hair-next" class="fa fa-caret-right sprite-next sprite-hair"></i></td></tr>
+										<tr><td><i id="sprite-head-next" class="fa fa-caret-right sprite-next sprite-head"></i></td></tr>
+										<tr><td><i id="sprite-body-next" class="fa fa-caret-right sprite-next sprite-body"></i></td></tr>
+										<tr><td><i id="sprite-bottom-next" class="fa fa-caret-right sprite-next sprite-bottom"></i></td></tr>
+									</table></td>
+								</tr>
+							</table>
+							<i id="sprite-randomize" class="fa fa-random center" style="margin-top: 0;"></i>
+						</div>
+						<div class="modal-footer">
+							<p style="margin-top: 10px;">Dieser Avatar wird dir bei der Registrierung helfen.<br>Nutze die Pfeile, um
+							sein Aussehen zu ändern!</p>
+							<button class="modal-button" id="skip-avatar">Überspringen</button>
+							<button class="modal-button" id="create-avatar">Fertig</button>
+						</div>
+					</div>
+				</div>
+				<div class="container">
+					<img id="logo" src="../../res/logo_full_light.png" alt="NudgeFlix Logo" width="256" height="256" class="center">
+					<p style="text-align:center" class="nf-font">Erstelle hier deinen NudgeFlix-Account!</p>
+
+					<hr>
+					<div class="inp_group">
+						<label for="email">Mailadresse</label>
+						<input type="text" placeholder="Für die Studie darfst du dir eine ausdenken" tabindex="1" name="inp" id="email" maxlength="64" required>
+						<small class="warning_label" id="mail_info"><b>Fehler.</b></small>
+					</div>
+
+					<div class="inp_group">
+						<label for="username">Anmeldename</label>
+						<input type="text" placeholder="Anmeldenamen eingeben" tabindex="1" name="inp" id="username" maxlength="32" required>
+						<small class="warning_label" id="username_info"><b>Fehler.</b></small>
+					</div>
+
+					<div class="inp_group">
+						<label for="psw">Passwort</label>
+						<input type="password" placeholder="Passwort eingeben" tabindex="1" name="inp" id="psw" maxlength="128" required>
+						<input type="password" placeholder="Passwort erneut eingeben" tabindex="1" name="inp" id="psw-repeat" maxlength="128" required>
+						<div style="display: flex; align-items: center">
+							<div style="margin: 5px 10px 5px 5px; display: flex;" id="pw-buttons">
+								<i id="pw-show" class="fa fa-eye"></i>
+								<i id="pw-clear" class="fa fa-trash-alt"></i>
+								<i id="pw-help" class="fa fa-question"></i>
+							</div>
+							<small style="display: flex;" class="warning_label" id="psw_info"><b></b></small>
+						</div>
+					</div>
+
+					<hr>
+					<p>Hier stünden unsere <a>AGB & Datenschutzerklärung</a>.</p>
+					<button class="registerbtn" id="submit_btn">Registrieren</button>
+				</div>
+			</div>
+			<div style="flex: 2; flex-basis: 150px; width: 150px;"></div>
+		</div>
+	</body>
+</html>

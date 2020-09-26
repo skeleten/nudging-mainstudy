@@ -1,0 +1,141 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>NudgeFlix Registrierung</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+	<link rel="stylesheet" type="text/css" href="/css/form.css">
+	<link href="/css/n1.css" rel="stylesheet" type="text/css" />
+	<script src="/script/n1.js"></script>
+</head>
+<body>
+<div class="input_area">
+	<div id="explanation-popup" class="modal" style="display: none;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h2 style="margin: 0;">Passwort-Hilfe</h2>
+			</div>
+			<div class="modal-body center" style="background-color: inherit; margin-top: 0;">
+				<h3>Was macht ein Passwort unsicher?</h3>
+				<p>Möchte jemand dein Passwort knacken, so gibt es meist zwei Optionen: Einfach alle möglichen
+					Kombinationen an Buchstaben, Zahlen und Zeichen durchgehen, was bei längeren Passwörtern aber sehr lange
+					dauern kann, oder eine Liste an häufigen Passwörtern und Begriffen einer Sprache so lange mit Zahlen und
+					Sonderzeichen kombinieren, bis sie auf das richtige Passwort kommen.</p>
+				<p>Ein unsicheres Passwort, also eines, das sich schnell knacken lässt, ist also entweder sehr kurz (weniger
+					als 8 Zeichen), oder besteht aus echten Worten in Verbindung mit Zahlen oder Sonderzeichen an häufigen
+					Stellen (am Ende, am Anfang). Ein Beispiel wäre <i>MeinHund2010!</i></p>
+				<hr>
+				<h3>Wie erstelle ich ein sicheres Passwort?</h3>
+				<p>Um einfach zu knackende Passwörter zu verhindern, schlagen wir eine Methode vor, welche durch akademische
+					Literatur als sicher befunden wurde: Wir erstellen das Passwort aus den Anfangsbuchstaben eines Satzes! Denk
+					dir einen Satz aus, welchen du dir gut merken kannst und der möglichst viele Zahlen und Satzzeichen enthält,
+					beispielsweise</p>
+				<p style="color: #555555;"><b>Wenn ich mit meinen 2 Hunden spazieren gehe, spielen sie am liebsten Fangen!</b></p>
+				<p>Von diesem Satz nehmen wir dann jeden Anfangsbuchstaben, jedes Satzzeichen und jede Zahl, und schreiben
+					sie hintereinander auf</p>
+				<p style="color: #555555;"><b>Wimm2Hsg,ssalF!</b></p>
+				<p>Dieses Passwort ist nun schwer zu erraten, aber solange du an deine zwei Hunde denkst, ist es leicht
+					wieder ins Gedächtnis zu rufen. Dieses Passwort ist natürlich ein Beispiel und sollte nicht verwendet
+					werden. Experimentiere gern mit mehr Zahlen und Sonderzeichen, oder denk dir andere Regeln dafür aus, wie du
+					Sätze zu Passwörtern machst; wichtig ist nur, dass es lang genug bleibt.</p>
+				<hr>
+				<h3>Eine Alternative: Der Passwort-Manager</h3>
+				<p>Wer sich keine Passwörter merken möchte, oder sich damit überfordert fühlt, für jeden Dienst ein eigenes
+					Passwort zu erstellen, kann auf einen Passwortmanager zurückgreifen. Ein guter Passwortmanager speichert
+					dabei alle deine Passwörter für Dienste in einer verschlüsselten Datei, auf die nur du Zugriff hast, und
+					kann dir meist sogar sichere Passwörter vorschlagen. Dabei haben selbst die Anbieter des Passwortmanagers
+					meist keinen Zugang zu deinen Passwörtern, und finanzieren sich beispielsweise über Premium-Funktionen für
+					Unternehmen.</p>
+				<p>Eine einfache Websuche ergibt eine Menge Optionen, meist hat aber auch dein Browser bereits einen
+					einfachen Passwortmanager eingebaut. Wir empfehlen Passwortmanager, um Passwörter zu sichern.</p>
+			</div>
+			<div class="modal-footer">
+				<button class="modal-button" id="close-explanation">Ich verstehe.</button>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<img src="../../res/logo_full_light.png" alt="NudgeFlix Logo" width="256" height="256" class="center">
+		<p style="text-align:center" class="nf-font">Erstelle hier deinen NudgeFlix-Account!</p>
+		
+		<hr>
+		<div class="inp_group">
+			<label for="email">Mailadresse</label>
+			<input type="text" placeholder="Für die Studie darfst du dir eine ausdenken" tabindex="1" name="inp" id="email" maxlength="64" required>
+			<small class="warning_label" id="mail_info"><b>Fehler.</b></small>
+		</div>
+		
+		<div id="pw-checkbox" style="display: none; position: absolute; right: 0; width: 30%; margin: 0; padding: 1em;">
+			<div class="modal-content" style="margin: auto; width: fit-content; width: -moz-fit-content; max-width: 100%;">
+				<div class="modal-header" style="text-align: center;">
+					<h2 style="margin: 0;">Passwortsicherheit</h2>
+				</div>
+				<div class="modal-body" style="background-color: inherit; margin: 0 25px;">
+					<div>
+						<div class="pwc-req" style="font-weight: bold;">
+							<span>Erforderlich</span>
+						</div>
+						<div id="pwc-common" class="pwc-item pwc-req">
+							<i name="checkbox" class="far fa-square"></i><span>Kein häufiges Passwort</span>
+						</div>
+						<div id="pwc-length" class="pwc-item pwc-req">
+							<i name="checkbox" class="far fa-square"></i><span>mind. 8 Zeichen lang</span>
+						</div>
+					</div>
+					<div>
+						<div class="pwc-opt" style="margin-top: 5px; font-weight: bold;">
+							<span>Empfohlen</span>
+						</div>
+						<div id="pwc-lower" class="pwc-item pwc-opt">
+							<i name="checkbox" class="far fa-square"></i><span>mind. 2 Kleinbuchstaben</span>
+						</div>
+						<div id="pwc-upper" class="pwc-item pwc-opt">
+							<i name="checkbox" class="far fa-square"></i><span>mind. 2 Großbuchstaben</span>
+						</div>
+						<div id="pwc-digit" class="pwc-item pwc-opt">
+							<i name="checkbox" class="far fa-square"></i><span>mind. 2 Ziffern</span>
+						</div>
+						<div id="pwc-special" class="pwc-item pwc-opt">
+							<i name="checkbox" class="far fa-square"></i><span>mind. 2 Sonderzeichen</span>
+						</div>
+						<div id="pwc-complexity" class="pwc-item pwc-opt">
+							<i name="checkbox" class="far fa-square"></i><span>Passwort ist komplex</span>
+							<small><i id="complexity-help" class="fa fa-question-circle" style="color: #5cb85c !important;"></i></small>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer" style="text-align: center;">
+					<button class="link-button center" id="pw-help">Informationen & Hilfe</button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="inp_group">
+			<label for="username">Anmeldename</label>
+			<input type="text" placeholder="Anmeldenamen eingeben" tabindex="1" name="inp" id="username" maxlength="32" required>
+			<small class="warning_label" id="username_info"><b>Fehler.</b></small>
+		</div>
+		
+		<div class="inp_group">
+			<label for="psw">Passwort</label>
+			<input type="password" placeholder="Passwort eingeben" tabindex="1" name="inp" id="psw" maxlength="128" required>
+			<div id="meter-container">
+				<div id="meter-bar"></div>
+			</div>
+			<div></div>
+			<input type="password" placeholder="Passwort erneut eingeben" tabindex="1" name="inp" id="psw-repeat" maxlength="128" required>
+			<div style="display: flex; align-items: center">
+				<div style="margin: 5px 10px 5px 5px; display: flex;" id="pw-buttons">
+					<i id="pw-show" class="fa fa-eye"></i>
+					<i id="pw-clear" class="fa fa-trash-alt"></i>
+				</div>
+				<small style="display: flex;" class="warning_label" id="psw_info"><b></b></small>
+			</div>
+		</div>
+		
+		<hr>
+		<p>Hier stünden unsere <a>AGB & Datenschutzerklärung</a>.</p>
+		<button class="registerbtn" id="submit_btn">Registrieren</button>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,389 @@
+/* Layout Expected to be mostly static */
+
+div.mainBox {
+  width: 670px;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFF;
+  border-radius: 8px;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  border: 1px solid #999;
+  border-top: 0;
+  box-shadow: 0 6px 6px -5px #acacac;
+}
+
+.createPWHeader {
+  font-weight: bold;
+  padding: 12px 0 10px 15px;
+  border-radius: 8px 8px 0 0;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+
+tr {
+  border-collapse: collapse;
+  padding: 0;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 0 solid #ddd;
+}
+
+td {
+  padding: 0;
+  margin: 0;
+  border-collapse: collapse;
+  border-width: 0;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 0 solid #ddd;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+  padding: 0;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 0 solid #ddd;
+}
+
+.passwordCreationSection {
+  display: inline-block;
+  margin: 0;
+  padding: 20px 10px 70px 10px;
+}
+
+.pwfield {
+  width: 340px;
+  float: left;
+  text-align: center;
+  margin: 0 auto 0 auto;
+  padding: 0;
+}
+
+.pwfieldModal {
+  width: 100%;
+  float: left;
+  text-align: center;
+  margin: 0 auto 0 auto;
+  padding: 10px 0 0 0;
+}
+
+.boxlabel {
+  width: 340px;
+  margin: 0;
+  padding: 10px 20px 5px 20px;
+  text-align: left;
+}
+
+.formInputBoxRow {
+  width: 300px;
+  margin: 0;
+  padding: 0;
+}
+
+.formInputBoxRowModal {
+  margin: 0 auto 0 auto;
+  text-align: center;
+}
+
+.formInputBox {
+  width: 300px;
+  margin: 0;
+  padding: 0;
+  border-style: solid;
+  border-width: 1px;
+  border-color: lightgray;
+}
+
+.formInputBox:focus {
+  outline: none;
+}
+
+/* Layout of the colored bar */
+
+.cups-passwordmeter-basic {
+  background-color: #f1f1f2;
+  height: 15px;
+  width: 300px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 99;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #f1f1f2;
+}
+
+.cups-passwordmeter-modal {
+  background-color: #f1f1f2;
+  height: 15px;
+  width: 300px;
+  margin: 0 14px 0 9px;
+  position: relative;
+  z-index: 99;
+}
+
+span#cups-passwordmeter-span {
+  display: block;
+  height: 100%;
+  text-align: center;
+  background-color: #0066cc;
+}
+
+span#cups-passwordmeter-span-modal {
+  display: block;
+  height: 100%;
+  text-align: center;
+  background-color: #0066cc;
+}
+
+/* Styling for error messages */
+
+.errorMessage {
+  /* Don't show these by default */
+  display: none;
+  font-weight: bold;
+}
+
+/* Layout for both non-modal and modal text feedback */
+
+.coloredSpacer {
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Layout for the non-modal text feedback */
+
+.nonmodalTable {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  table-layout: fixed;
+}
+
+.nonmodalRow {
+  margin: 0;
+  padding: 0 0 12px 0;
+}
+
+.nonmodalColorCell {
+  width: 10px;
+  margin: 0;
+  padding: 3px 0 12px 0;
+}
+
+.nonmodalTextCell {
+  width: auto;
+  margin: 0;
+  padding: 0 0 12px 6px;
+  vertical-align: middle;
+  line-height: 1.2;
+}
+
+.tipText {
+  font-size: 10pt;
+  margin: 0;
+  padding: 0 0 0 50px;
+  vertical-align: middle;
+}
+
+/* Layout for the modal text feedback */
+
+.modalTable {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  table-layout: fixed;
+}
+
+#modalFeedbackTable {
+  margin: 0 0 10px 0;
+}
+
+.modalRow {
+  margin: 0;
+  padding: 0;
+  vertical-align: top;
+}
+
+.modalColorCell {
+  width: 10px;
+  margin: 0;
+  padding: 17px 0 0 0;
+  vertical-align: top;
+}
+
+.modalColorCellGeneric {
+  /* Distinct from .modalColorCell because we sometimes hide .modalColorCell */
+  width: 10px;
+  margin: 0;
+  padding: 17px 0 0 0;
+  vertical-align: top;
+}
+
+.modalTextCell {
+  width: auto;
+  margin: 0;
+  padding: 9px 0 0 0;
+  vertical-align: middle;
+}
+
+.modalTipText {
+  font-size: 10pt;
+  width: 100%;
+  margin: 0;
+  padding: 0 20px 0 20px;
+}
+
+div.modal-footer {
+  text-align: center;
+  border: none;
+  margin-bottom: 10px;
+  padding: 0 0 5px 0;
+}
+
+/* Layout for the modal window */
+
+.modalHeader {
+  padding: 0;
+}
+
+.modalHeaderText {
+  font-weight: bold;
+  width: 50%;
+  margin: 0;
+  padding: 10px;
+}
+
+.modal-body {
+  margin: 0;
+  padding: 0 48px 15px 48px;
+  cursor: default;
+}
+
+div#modal-top-password {
+  margin: 20px 0 0 0;
+  padding: 0;
+}
+
+.modal-content {
+  border-radius: 9px;
+}
+
+.suggestionText {
+  font-size: 10pt;
+  margin: 0;
+  padding: 5px 20px 0 5px;
+}
+
+/* Letting users with a hidden password know a concrete suggestion is available */
+
+.fixedPWavailablePortal {
+  font-size: 12pt;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 0 3px 0;
+  padding: 3px;
+}
+
+/* The concrete suggestion itself */
+
+#nonmodalConcreteSuggestion {
+  font-size: 12pt;
+  font-weight: bold;
+  text-align: left;
+  margin: 4px 0 3px 0;
+  padding: 3px;
+}
+
+#modalConcreteSuggestion {
+  font-size: 12pt;
+  font-weight: bold;
+  width: 100%;
+  margin: 10px auto 5px auto;
+  padding: 0;
+}
+
+.fixedPW {
+  font-weight:bold;
+  cursor: pointer;
+}
+
+#fixedPW:hover {
+  cursor: pointer;
+}
+
+/* Text within the modal */
+
+.strategyHeading {
+  font-size: 12pt;
+  font-weight: bold;
+  width: 100%;
+  margin: 20px auto 0 auto;
+  padding: 0;
+}
+
+/* Style the link to the generic-advice modal */
+
+.portalToGenericAdviceModal {
+  font-weight:bold;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: underline;
+}
+
+/* Show/Hide password checkboxes */
+
+.showHideSection {
+  width: 300px;
+  font-size: 12pt;
+  text-align: right;
+  vertical-align: middle;
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+}
+
+.showHideCheckbox {
+  vertical-align: middle;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.checkboxRequiringLabel {
+  position: relative;
+  vertical-align: text-bottom;
+  bottom: 1px;
+}
+
+/* Buttons (e.g., Continue, Discard Changes) */
+.buttonLayout {
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding: 6px;
+}
+
+.buttonLayout:focus {
+  outline: none;
+}
+
+/* (Why?) links next to text feedback */
+.explainWhy {
+  cursor: pointer;
+  text-decoration: underline;
+  vertical-align: top;
+  margin: 0;
+  padding: 0 0 0 2px;
+}

@@ -1,0 +1,8 @@
+#chart {
+	height: 30%;
+	width: 30%;
+	position: absolute;
+	right: 0;
+	margin: 0;
+	padding: 2em;
+}

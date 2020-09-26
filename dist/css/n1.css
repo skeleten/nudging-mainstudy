@@ -1,0 +1,127 @@
+.pwc-item {
+	font-weight: bolder;
+	margin: 2px;
+}
+
+.pwc-item * {
+	display: inline-block;
+}
+
+.pwc-item i {
+	margin-right: 5px;
+}
+
+.pwc-item > i {
+	cursor: default !important;
+}
+
+.pwc-req * {
+	color: orangered;
+}
+
+.pwc-opt * {
+	color: lightsalmon;
+}
+
+.pwc-satisfied span {
+	color: darkgray;
+	text-decoration: line-through;
+	font-weight: normal;
+}
+
+.pwc-satisfied i {
+	color: #00e500;
+}
+
+.link-button {
+	border: none;
+	background: none;
+	color: gray;
+	padding: 0;
+	margin: 0 auto 8px auto;
+	cursor: pointer;
+}
+
+.link-button:hover {
+	text-decoration: underline;
+}
+
+.link-button:focus {
+	outline: none;
+}
+
+#pw-checkbox .modal-content {
+	animation: none;
+}
+
+#meter-container {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+	margin: 0 auto 5px 0;
+	width: 100%;
+	height: 0.5em;
+
+	background: rgba(0, 0, 0, 0.1);
+}
+
+#meter-bar {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+
+	height: 100%;
+}
+
+.meter-bar-0 {
+	background: none;
+}
+
+.meter-bar-1 {
+	width: 25%;
+	background: red;
+	animation-name: ani-meter-1;
+	animation-duration: 0.5s;
+}
+
+@keyframes ani-meter-1 {
+	from	{ width: 0;		opacity: 0.5 }
+	to		{ width: 25%;	opacity: 1	 }
+}
+
+.meter-bar-2 {
+	width: 50%;
+	background: #ffbe00;
+	animation-name: ani-meter-2;
+	animation-duration: 0.5s;
+}
+
+@keyframes ani-meter-2 {
+	from	{ width: 25%;	opacity: 0.5 }
+	to		{ width: 50%;	opacity: 1   }
+}
+
+.meter-bar-3 {
+	width: 75%;
+	background: #77ec00;
+	animation-name: ani-meter-3;
+	animation-duration: 0.5s;
+}
+
+@keyframes ani-meter-3 {
+	from	{ width: 50%;	opacity: 0.5 }
+	to		{ width: 75%;	opacity: 1   }
+}
+
+.meter-bar-4 {
+	width: 100%;
+	background: #02a600;
+	animation-name: ani-meter-4;
+	animation-duration: 0.5s;
+}
+
+@keyframes ani-meter-4 {
+	from	{ width: 75%;	opacity: 0.5 }
+	to		{ width: 100%;	opacity: 1   }
+}
